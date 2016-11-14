@@ -101,7 +101,32 @@ public class Sort {
         }
     }
 
+    public void quickSort(int a[] , int p, int r){
+        if (p < r){
+            int q = partition(a, p, r);
+            quickSort(a, p, q - 1);
+            quickSort(a, q + 1, r);
+        }
+    }
 
+    public int partition(int a[], int p, int r){
+        int x = a[r];
+        int i = p - 1;
+        for (int j = p; j <= r - 1; j++) {
+            if (a[j] <= x){
+                i = i + 1;
+                swap(a, i, j);
+            }
+        }
+        swap(a, r, i+1);
+        return i + 1;
+    }
+
+    public void swap(int arr[], int a, int b){
+        int tmp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = tmp;
+    }
 
 
     public void arraySort(int[] arr){

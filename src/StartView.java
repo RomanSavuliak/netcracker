@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/**
- * Created by roman on 06.11.16.
- */
+
 public class StartView {
     RandomArray randomArray = new RandomArray();
     Sort sort = new Sort();
@@ -85,8 +83,9 @@ public class StartView {
         while (true) {
             System.out.println("select 1 for Bubble Sort");
             System.out.println("select 2 for Bubble Sort down");
-            System.out.println("select 3 for Merge Sort");
-            System.out.println("select 4 for Arrays.sort");
+            System.out.println("select 3 for Quick Sort down");
+            System.out.println("select 4 for Merge Sort");
+            System.out.println("select 5 for Arrays.sort");
 
             switch (sc.nextInt()) {
                 case 1:
@@ -96,9 +95,12 @@ public class StartView {
                     sort.bubbleSortDown(arr);
                     break;
                 case 3:
-                    sort.mergeSort(arr);
+                    sort.quickSort(arr, 0, arr.length - 1);
                     break;
                 case 4:
+                    sort.mergeSort(arr);
+                    break;
+                case 5:
                     sort.arraySort(arr);
                     break;
                 default:
